@@ -39,8 +39,8 @@ const Header: React.FC = () => {
   );
 
   return (
-    <div className="flex px-12 bg-neutral-900 justify-between h-12 fixed w-full">
-      <div className="flex gap-8">
+    <div className="flex px-12 bg-neutral-950 justify-between h-20 fixed w-full min-h-[54px] items-center">
+      <div className="flex gap-8 h-[40px]">
         <Image src="/tempLogo.png" height={40} width={40} alt="Logo" priority />
         <div className="items-center justify-between hidden xl:flex gap-4">
           {routes.map((item) => {
