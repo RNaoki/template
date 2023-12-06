@@ -2,20 +2,23 @@
 
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useMemo } from 'react';
-import HeaderItem from './HeaderItem';
+import { useContext, useMemo } from 'react';
+import HeaderButton from './HeaderButton';
+import HeaderNav from './HeaderNav';
+import { Modals } from '../utils/ModalsContext';
 
 const Header: React.FC = () => {
   const pathname = usePathname();
+  const { login, setLogin } = useContext(Modals);
 
   const routes = useMemo(
     () => [
       {
-        label: 'Home',
+        label: 'Início',
         href: '/',
       },
       {
-        label: 'Search',
+        label: 'Pesquisar',
         href: '/',
       },
     ],
@@ -26,13 +29,17 @@ const Header: React.FC = () => {
     () => [
       {
         label: 'Cadastrar-se',
-        href: '/',
+        onClick: () => {
+          setLogin(true);
+        },
       },
       {
         label: 'Entrar',
-        href: '/',
         className:
           'bg-emerald-600 rounded-md px-3 py-1 text-neutral-100 hover:bg-emerald-400 transition',
+        onClick: () => {
+          setLogin(true);
+        },
       },
     ],
     [pathname],
@@ -44,13 +51,13 @@ const Header: React.FC = () => {
         <Image src="/tempLogo.png" height={40} width={40} alt="Logo" priority />
         <div className="items-center justify-between hidden xl:flex gap-4">
           {routes.map((item) => {
-            return <HeaderItem key={item.label} {...item} />;
+            return <HeaderNav key={item.label} {...item} />;
           })}
         </div>
       </div>
       <div className="items-center justify-between hidden xl:flex gap-4">
         {signRoutes.map((item) => {
-          return <HeaderItem key={item.label} {...item} />;
+          return <HeaderButton key={item.label} {...item} />;
         })}
       </div>
     </div>

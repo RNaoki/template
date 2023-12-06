@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Figtree } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
+import ModalsContext from './utils/ModalsContext';
 
 const font = Figtree({ subsets: ['latin'] });
 
@@ -17,10 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>
-        <Header />
-        {children}
-      </body>
+      <ModalsContext>
+        <body className={font.className}>
+          <Header />
+          {children}
+        </body>
+      </ModalsContext>
     </html>
   );
 }

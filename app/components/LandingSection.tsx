@@ -1,18 +1,18 @@
 const LandingSection: React.FC = () => {
   return (
-    <div className="flex flex-col items-center h-[100vh] w-full mt-52 px-12">
+    <div className="flex flex-col items-center h-[90vh] w-full mt-52 px-12">
       <p className="text-[40px] font-bold text-center animate-fadein w-[90%] xl:w-[40%]">
-        Inspirational or description title
+        Escreva algo legal aqui
       </p>
-      <div className="flex relative w-[90%] xl:w-[30%]">
+      <div className="flex relative w-[90%] xl:w-[20%]">
         <p className="text-[14px] absolute animate-slidein opacity-0 font-semibold left-0">
-          Ability 1
+          Algo
         </p>
         <p className="text-[14px] absolute animate-slidein opacity-0 animation-delay-[500ms] font-semibold text-center w-full">
-          Ability 2
+          Legal
         </p>
         <p className="text-[14px] absolute animate-slidein opacity-0 animation-delay-[1000ms] font-semibold right-0">
-          Ability 3
+          Aqui
         </p>
       </div>
     </div>

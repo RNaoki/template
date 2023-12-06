@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
-type THeaderItemProps = {
+type THeaderNavProps = {
   label: string;
   href: string;
   className?: string;
 };
 
-const HeaderItem: React.FC<THeaderItemProps> = ({ label, href, className }) => {
+const HeaderNav: React.FC<THeaderNavProps> = ({ label, href, className }) => {
   return (
     <Link
       href={href}
@@ -19,4 +19,4 @@ const HeaderItem: React.FC<THeaderItemProps> = ({ label, href, className }) => {
   );
 };
 
-export default HeaderItem;
+export default HeaderNav;
